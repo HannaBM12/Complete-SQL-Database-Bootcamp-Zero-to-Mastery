@@ -5,8 +5,12 @@
 * Question: 
 * Select people either under 30 or over 50 with an income above 50000
 * Include people that are 50
-* that are from either Japan or Australia
-*/
+* that are from either Japan or Australia */
+
+SELECT firstname, lastname FROM customers
+WHERE (age <30 OR age <=50)AND income >50000
+AND (country = 'Japan' OR country = 'Austrialia';
+
 
 /*
 * DB: Store
@@ -14,3 +18,6 @@
 * Question: 
 * What was our total sales in June of 2004 for orders over 100 dollars?
 */
+SELECT sum(totalamount) FROM orders
+WHERE (orderdate >= '2004-06-01' AND orderdate <='2004-06-30')
+AND netamount > 100 
